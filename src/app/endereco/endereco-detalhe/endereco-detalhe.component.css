@@ -1,0 +1,33 @@
+.form-line mat-form-field {
+  margin-inline-end: 20px;
+}
+
+.form-line .numero {
+  width: 4em;
+}
+
+.site {
+  width: 20em;
+}
+
+/* .form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.form-container label {
+  margin-bottom: 10px;
+}
+
+.form-container form > * {
+  margin: 5px 0;
+} */
+
+.endereco-card mat-card-title {
+  font-size: 18px;
+}

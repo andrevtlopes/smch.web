@@ -1,0 +1,31 @@
+mat-card {
+    // width: 20em;
+    margin: 2em auto;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: line;
+    .form-field mat-form-field {
+      margin-bottom: .5em;
+      padding-inline-end: 2em;
+    }
+}
+
+.form-line mat-form-field {
+  min-width: 24em;
+  width: 30%;
+}
+
+.form-address mat-form-field {
+  width: 95%;
+}
+
+.form-email-password mat-form-field {
+  min-width: 36em;
+  width: 47%;
+}
+
+.mat-input-container {
+  margin-bottom: .5em;
+}

@@ -1,0 +1,69 @@
+<mat-card>
+  <mat-card-title>Endereço</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <div class="form-field">
+        <div class="form-line">
+          <mat-form-field [ngClass]="{'error': isFieldWarning('cep')}">
+            <input matInput formControlName="cep" placeholder="CEP">
+            <mat-error *ngIf="isFieldWarning('cep')">
+              <div [hidden]="!isRequired('cep')">Campo Obrigatório.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field [ngClass]="{'error': isFieldWarning('logradouro')}">
+            <input matInput formControlName="logradouro" placeholder="Logradouro" required>
+            <mat-error *ngIf="isFieldWarning('logradouro')">
+              <div [hidden]="!isRequired('logradouro')">Campo Obrigatório.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field [ngClass]="{'error': isFieldWarning('numero')}">
+            <input matInput formControlName="numero" placeholder="Número">
+            <mat-error *ngIf="isFieldWarning('numero')">
+            </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field [ngClass]="{'error': isFieldWarning('bairro')}">
+            <input matInput formControlName="bairro" placeholder="Bairro" required>
+            <mat-error *ngIf="isFieldWarning('bairro')">
+              <div [hidden]="!isRequired('bairro')">Campo Obrigatório.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field [ngClass]="{'error': isFieldWarning('complemento')}">
+            <input matInput formControlName="complemento" placeholder="Complemento">
+            <mat-error *ngIf="isFieldWarning('complemento')">
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-estado-cidade">
+          <mat-form-field [ngClass]="{'error': isFieldWarning('uf')}">
+            <mat-select formControlName="uf" placeholder="Estado" [id]="'estado'">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let uf of ufs" [value]="uf.sigla">
+                {{ uf.nome }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldWarning('uf')">
+              <div [hidden]="!isRequired('uf')">Campo Obrigatório.</div>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field [ngClass]="{'error': isFieldWarning('cidade')}">
+            <mat-select formControlName="cidade" placeholder="Cidade" [id]="'cidade'">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let cidade of cidades" [value]="cidade.nome">
+                {{ cidade.nome }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="isFieldWarning('cidade')">
+              <div [hidden]="!isRequired('cidade')">Campo Obrigatório.</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="middle">
+    <button mat-raised-button color="primary" (click)="onSubmit()">Cadastrar</button>
+    <div> {{ form.value | json }} </div>
+  </mat-card-actions>
+</mat-card>

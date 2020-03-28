@@ -1,0 +1,27 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  padding-block-start: 2em;
+  padding-block-end: 5em;
+}
+
+.angular-logo {
+  margin: 0 4px 3px 0;
+  height: 35px;
+  vertical-align: middle;
+}
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
